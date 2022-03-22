@@ -32,6 +32,9 @@ app.use(
 // Routes
 app.use("/", customerRoutes);
 
+// Statics Files
+app.use(express.static(path.join(__dirname, "/public")));
+
 app.listen(app.get("port"), () => {
     console.log(`Server started on port ${app.get("port")}`);
 });
