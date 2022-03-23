@@ -23,4 +23,16 @@ controller.add = (req, res) => {
     });
 };
 
+controller.delete = (req, res) => {
+    const {id} = req.params;
+    req.getConnection((err, conn) => {
+        conn.query("DELETE FROM customer WHERE id = ?", [id], (err, result) => {
+            if (err) {
+                res.json(err);
+            }
+            res.redirect("/");
+        });
+    });
+};
+
 module.exports = controller;

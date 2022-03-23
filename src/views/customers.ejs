@@ -20,13 +20,17 @@
                         <tr class="table-dark">
                             <td colspan="5" class="text-center">There are no customers</td>
                         </tr>
-                    <% } else{ data.forEach((order, index) => { %>
+                    <% } else{ data.forEach((customer, index) => { %>
                         <tr class="table-dark">
                             <td><%= index + 1 %></td>
-                            <td><%= order.name %></td>
-                            <td><%= order.address %></td>
-                            <td><%= order.phone %></td>
-                            <td></td>
+                            <td><%= customer.name %></td>
+                            <td><%= customer.address %></td>
+                            <td><%= customer.phone %></td>
+                            <td>
+                                <a href="/delete/<%= customer.id %>" class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </a>
+                            </td>
                         </tr>
                     <% }); } %>
                     </tbody>
