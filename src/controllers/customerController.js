@@ -18,7 +18,7 @@ controller.add = (req, res) => {
             if (err) {
                 res.json(err);
             }
-            res.render("customers", {data: result.insertId});
+            res.redirect("/");
         });
     });
 };
