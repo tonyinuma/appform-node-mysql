@@ -6,7 +6,19 @@ controller.list = (req, res) => {
             if (err) {
                 res.json(err);
             }
-            res.render("customers", { data: customers });
+            res.render("customers", {data: customers});
+        });
+    });
+};
+
+controller.add = (req, res) => {
+    const data = req.body;
+    req.getConnection((err, conn) => {
+        conn.query("INSERT INTO customer set ?", [data], (err, result) => {
+            if (err) {
+                res.json(err);
+            }
+            res.render("customers", {data: result.insertId});
         });
     });
 };
