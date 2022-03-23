@@ -16,7 +16,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <% data.forEach((order, index) => { %>
+                    <% if(data.length < 1){ %>
+                        <tr class="table-dark">
+                            <td colspan="5" class="text-center">There are no customers</td>
+                        </tr>
+                    <% } else{ data.forEach((order, index) => { %>
                         <tr class="table-dark">
                             <td><%= index + 1 %></td>
                             <td><%= order.name %></td>
@@ -24,7 +28,7 @@
                             <td><%= order.phone %></td>
                             <td></td>
                         </tr>
-                    <% }); %>
+                    <% }); } %>
                     </tbody>
                 </table>
             </div>
