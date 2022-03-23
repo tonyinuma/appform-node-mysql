@@ -21,4 +21,4 @@ RUN script sql in mysql:
 
     db/db.sql
 
-![Screenshot](src\public\picture.png)
+![Screenshot](src/public/picture.png)
