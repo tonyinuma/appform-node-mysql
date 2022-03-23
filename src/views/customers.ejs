@@ -1,5 +1,53 @@
 <%- include('partials/_header.ejs') %>
 
-<h1>hi!</h1>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-7">
+            <div class="container">
+                <h2>List</h2>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="post">
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Enter Name"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    name="address"
+                                    class="form-control"
+                                    placeholder="Enter Address"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    class="form-control"
+                                    placeholder="Enter Phone"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary form-control"
+                            >
+                                Save
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%- include('partials/_footer.ejs') %>
