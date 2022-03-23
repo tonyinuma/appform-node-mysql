@@ -28,6 +28,7 @@ app.use(
         "single"
     )
 );
+app.use(express.urlencoded());
 
 // Routes
 app.use("/", customerRoutes);
