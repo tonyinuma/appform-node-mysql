@@ -4,7 +4,29 @@
     <div class="row mt-5">
         <div class="col-md-7">
             <div class="container">
-                <h2>List</h2>
+                <h2>List of Customers</h2>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% data.forEach((order, index) => { %>
+                        <tr class="table-dark">
+                            <td><%= index + 1 %></td>
+                            <td><%= order.name %></td>
+                            <td><%= order.address %></td>
+                            <td><%= order.phone %></td>
+                            <td></td>
+                        </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col-md-5">
@@ -13,33 +35,15 @@
                     <div class="card-body">
                         <form action="/add" method="post">
                             <div class="mb-3">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    class="form-control"
-                                    placeholder="Enter Name"
-                                />
+                                <input type="text" name="name" class="form-control" placeholder="Enter Name"/>
                             </div>
                             <div class="mb-3">
-                                <input
-                                    type="text"
-                                    name="address"
-                                    class="form-control"
-                                    placeholder="Enter Address"
-                                />
+                                <input type="text" name="address" class="form-control" placeholder="Enter Address"/>
                             </div>
                             <div class="mb-3">
-                                <input
-                                        type="text"
-                                        name="phone"
-                                        class="form-control"
-                                        placeholder="Enter Phone"
-                                />
+                                <input type="text" name="phone" class="form-control" placeholder="Enter Phone"/>
                             </div>
-                            <button
-                                    type="submit"
-                                    class="btn btn-primary form-control"
-                            >
+                            <button type="submit" class="btn btn-primary form-control">
                                 Add
                             </button>
                         </form>
