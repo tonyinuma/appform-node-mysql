@@ -47,4 +47,17 @@ controller.edit = (req, res) => {
     });
 };
 
+controller.update = (req, res) => {
+    const {id} = req.params;
+    const newCustomer = req.body;
+    req.getConnection((err, conn) => {
+        conn.query("UPDATE customer SET ? WHERE id = ?", [newCustomer, id], (err, result) => {
+            if (err) {
+                res.json(err);
+            }
+            res.redirect("/");
+        });
+    });
+};
+
 module.exports = controller;
